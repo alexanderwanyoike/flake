@@ -1,4 +1,4 @@
-# FLAC to MP3 Converter
+# flake
 
 A command-line tool that efficiently converts FLAC audio files to MP3 format while maintaining audio quality. The converter processes files in parallel using multiple threads and preserves your directory structure in the output.
 
@@ -55,7 +55,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 3. Install the required packages:
 ```bash
-pip install pyinstaller pydub
+pip install -r requirements.txt
 ```
 
 4. Build the executable:
@@ -67,15 +67,15 @@ python build.py
 
 To make the converter accessible from anywhere, install it to `/usr/local/bin`:
 ```bash
-sudo cp dist/flac_converter /usr/local/bin/
-sudo chmod +x /usr/local/bin/flac_converter
+sudo cp dist/flake /usr/local/bin/
+sudo chmod +x /usr/local/bin/flake
 ```
 
 Alternatively, for a user-specific installation:
 ```bash
 mkdir -p ~/.local/bin
-cp dist/flac_converter ~/.local/bin/
-chmod +x ~/.local/bin/flac_converter
+cp dist/flake ~/.local/bin/
+chmod +x ~/.local/bin/flake
 ```
 
 If using `~/.local/bin`, add this to your `~/.bashrc` or `~/.zshrc`:
@@ -87,12 +87,12 @@ export PATH="$HOME/.local/bin:$PATH"
 
 Basic usage:
 ```bash
-flac_converter -i <input_directory> -o <output_directory>
+flake -i <input_directory> -o <output_directory>
 ```
 
 Example:
 ```bash
-flac_converter -i ~/Music/flac -o ~/Music/mp3
+flake -i ~/Music/flac -o ~/Music/mp3
 ```
 
 ### Command Line Options
@@ -103,7 +103,7 @@ flac_converter -i ~/Music/flac -o ~/Music/mp3
 
 Example with custom thread count:
 ```bash
-flac_converter -i ~/Music/flac -o ~/Music/mp3 -t 4
+flake -i ~/Music/flac -o ~/Music/mp3 -t 4
 ```
 
 ## Output Structure
